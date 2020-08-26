@@ -25,6 +25,11 @@ const Dashboard = () => {
 
   return (
     <div>
+      <button>
+        <Link href="/dashboard/newPost">
+          <a>New Post</a>
+        </Link>
+      </button>
       {posts
         ? posts.map((post, index) => {
             return (
