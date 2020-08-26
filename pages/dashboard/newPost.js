@@ -1,23 +1,23 @@
-import NewPostForm from '../../components/forms/NewPostForm'
-import useVerify from '../../utils/useVerify'
-import { useEffect } from 'react'
+import NewPostForm from "../../components/forms/newPostForm";
+import useVerify from "../../utils/useVerify";
+import { useEffect } from "react";
 
 const NewPost = () => {
-  const [ verified, checkForSession ] = useVerify()
+  const [verified, checkForSession] = useVerify();
 
   useEffect(() => {
-    checkForSession()
-  }, [])
+    checkForSession();
+  }, []);
 
-  if(verified){
+  if (verified) {
     return (
       <div>
         <h2>MAKE NEW POST</h2>
-        <NewPostForm/>
+        <NewPostForm />
       </div>
-    )
+    );
   } else {
-    return <div>You need to login to access this page</div>
+    return <div>You need to login to access this page</div>;
   }
-}
-export default NewPost
+};
+export default NewPost;
