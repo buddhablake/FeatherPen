@@ -21,7 +21,7 @@ const EditPostForm = ({ postid }) => {
     axios
       .put("/api/posts/" + postid, values)
       .then((res) => {
-        router.push("/");
+        router.push("/dashboard");
       })
       .catch((err) => {
         console.log(err.message);

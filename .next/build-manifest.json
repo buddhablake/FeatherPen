@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/dashboard/editPost/[postid]": [
+    "/login": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/dashboard/editPost/[postid].js"
+      "static/chunks/pages/login.js"
     ]
   },
   "ampFirstPages": []

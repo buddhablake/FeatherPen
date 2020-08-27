@@ -4,15 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Index = () => {
-  // const [ verified, checkForSession ] = verifySession()
-  //
-  // useEffect(() => {
-  //   checkForSession()
-  // }, [])
-  //
-  // if(!verified){
-  //   return <div> <h1>You need to log in</h1> </div>
-  // }
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -26,16 +17,28 @@ const Index = () => {
       });
   }, []);
 
+  const createPostPreview = (body) => {
+    body = body.split("");
+    let preview = "";
+    for (let i = 0; i < 250; i++) {
+      preview += body[i];
+    }
+    return preview;
+  };
+
   return (
-    <div className="flex gap-8 p-10">
+    <div className="p-10 text-gray-800">
       {posts.length
         ? posts.map((post, index) => {
             return (
-              <div key={index}>
-                <h2>{post.title}</h2>
-                <p>{post.body}</p>
-                <p>{post._id}</p>
-                <p>{post.author}</p>
+              <div
+                key={index}
+                className="mb-10 border-gray-600 border rounded-lg p-4"
+              >
+                <h2 className="text-2xl underline tracking-wide">
+                  {post.title}
+                </h2>
+                <p>{createPostPreview(post.body)}...</p>
               </div>
             );
           })

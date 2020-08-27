@@ -16,6 +16,7 @@ const Nav = () => {
 
   const router = useRouter();
 
+  //Can we abstract this function into it's own file???
   const logout = () => {
     axios
       .delete("/api/session", {
@@ -37,33 +38,34 @@ const Nav = () => {
   return (
     <nav className="flex">
       <ul className="flex justify-around gap-4">
-        <li>
+        <li className="hover:underline">
           <Link href="/">
-            <a>HOME</a>
+            <a>Home</a>
           </Link>
         </li>
         {isLogged ? (
           <>
-            <li>
+            <li className="hover:underline">
               <Link href="/dashboard">
-                <a>dash</a>
+                <a>Dashboard</a>
               </Link>
             </li>
             <li>
-              <button onClick={logout}>Logout</button>
+              <button className="hover:underline" onClick={logout}>
+                Logout
+              </button>
             </li>
           </>
         ) : (
           <>
-            {" "}
-            <li>
+            <li className="hover:underline">
               <Link href="/login">
-                <a>LOGIN</a>
+                <a>Login</a>
               </Link>
             </li>
-            <li>
+            <li className="hover:underline">
               <Link href="/register">
-                <a>REGISTER</a>
+                <a>Signup</a>
               </Link>
             </li>
           </>
