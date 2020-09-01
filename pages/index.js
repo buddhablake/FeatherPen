@@ -38,7 +38,15 @@ const Index = () => {
                 <h2 className="text-2xl underline tracking-wide">
                   {post.title}
                 </h2>
-                <p>{createPostPreview(post.body)}...</p>
+                <p>
+                  {createPostPreview(post.body)}...{" "}
+                  <a
+                    href={"/post/" + post._id}
+                    className="underline text-blue-700 font-bold"
+                  >
+                    Continue reading
+                  </a>
+                </p>
               </div>
             );
           })

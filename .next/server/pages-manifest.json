@@ -3,5 +3,13 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/login": "pages/login.js"
+  "/post/[postid]": "pages/post/[postid].js",
+  "/api/posts/[postid]": "pages/api/posts/[postid].js",
+  "/dashboard": "pages/dashboard.js",
+  "/api/posts": "pages/api/posts.js",
+  "/api/posts/getUserPosts": "pages/api/posts/getUserPosts.js",
+  "/api/session": "pages/api/session.js",
+  "/login": "pages/login.js",
+  "/api/login": "pages/api/login.js",
+  "/dashboard/editPost/[postid]": "pages/dashboard/editPost/[postid].js"
 }
