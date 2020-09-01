@@ -16,7 +16,7 @@ export default ViewPost;
 
 ViewPost.getInitialProps = async ({ query: { postid }, req }) => {
   const post = await axios.get(
-    `https://${req.headers.host}/api/posts/${postid}`
+    `http://${req.headers.host}/api/posts/${postid}`
   );
   console.log();
   return { post: post.data.data };
