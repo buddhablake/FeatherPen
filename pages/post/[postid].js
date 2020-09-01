@@ -15,7 +15,7 @@ const ViewPost = ({ post }) => {
 export default ViewPost;
 
 ViewPost.getInitialProps = async ({ query: { postid } }) => {
-  const post = await axios.get(`http://localhost:3000/api/posts/${postid}`);
+  const post = await axios.get(`${process.env.ROOT}/api/posts/${postid}`);
 
   return { post: post.data.data };
 };
