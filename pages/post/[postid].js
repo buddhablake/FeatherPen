@@ -15,7 +15,9 @@ const ViewPost = ({ post }) => {
 export default ViewPost;
 
 ViewPost.getInitialProps = async ({ query: { postid } }) => {
-  const post = await axios.get(`${process.env.ROOT}/api/posts/${postid}`);
+  const post = await axios.get(
+    `https://featherpen.vercel.app//api/posts/${postid}`
+  );
 
   return { post: post.data.data };
 };
