@@ -14,10 +14,10 @@ const ViewPost = ({ post }) => {
 
 export default ViewPost;
 
-ViewPost.getInitialProps = async ({ query: { postid } }) => {
+ViewPost.getInitialProps = async ({ query: { postid }, req }) => {
   const post = await axios.get(
-    `https://featherpen.vercel.app//api/posts/${postid}`
+    `https://${req.headers.host}/api/posts/${postid}`
   );
-
+  console.log();
   return { post: post.data.data };
 };
